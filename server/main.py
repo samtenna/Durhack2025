@@ -57,25 +57,82 @@ pins = {
     1 : {
         "City": "London",
         "Desc": "Beautiful City"
+    },
+
+    2 : {
+        "City": "Yorkshire",
+        "Desc": "Beautiful City"
+    },
+
+    3: {
+        "City": "Scotland",
+        "Desc": "Beautiful City"
+    },
+    4: {
+        "City": "Wales",
+        "Desc": "Beautiful City"
+    },
+    5: {
+        "City": "Sw",
+        "Desc": "Beautiful City"
+    },
+    6: {
+        "City": "Se",
+        "Desc": "Beautiful City"
+    },
+    7: {
+        "City": "East-Anglia",
+        "Desc": "Beautiful City"
+    },
+    8: {
+        "City": "West-midlands",
+        "Desc": "Beautiful City"
+    },
+    9: {
+        "City": "East-midlands",
+        "Desc": "Beautiful City"
+    },
+    10: {
+        "City": "Nw",
+        "Desc": "Beautiful City"
+    },
+    11: {
+        "City": "Ne",
+        "Desc": "Beautiful City"
+    },
+    12: {
+        "City": "ni",
+        "Desc": "Beautiful City"
     }
+
 }
 
 
-@app.route("/pins", methods=['GET'])
-def find_pin():
-    pin = pins[1]
+# TODO change this line of code
+current = []
 
-    response = f""" 
-        <div class="bg-white">
-            <p class="text-xl text-black">{pins[1]["City"]}</p>
-            <p class="text-xl text-black">{pins[1]["Desc"]}</p>
-        </div>
+@app.route("/pins/<int:pin_id>", methods=['GET'])
+def find_pin(pin_id):
+    global current
 
-    """
-    return make_response(
-        response,
-        push_url=False,
-        trigger={"event1": "A message", "event2": "Another message"},
+    if pin_id in current:
+        current.remove(pin_id)
+        return make_response(
+            ""
+        )
+    else:
+        current.append(pin_id)
+        response = f""" 
+            <div class="bg-white">
+                <p class="text-xl text-black">{pins[pin_id]["City"]}</p>
+                <p class="text-xl text-black">{pins[pin_id]["Desc"]}</p>
+            </div>
+
+        """
+        return make_response(
+            response,
+            push_url=False,
+            trigger={"event1": "A message", "event2": "Another message"},
     )
 
 
