@@ -1,8 +1,30 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+from dataclasses import dataclass
 from flask_htmx import HTMX, make_response
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 htmx = HTMX(app)
+
+class Base(DeclarativeBase):
+    pass
+
+db = SQLAlchemy(model_class=Base)
+db.init_app(app)
+
+@dataclass
+class Region(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    description = db.Column(db.Text)
+
+    def __repr__(self):
+        return f"<Region {self.name}>"
+
+with app.app_context():
+    db.create_all()
 
 @app.route("/")
 def index():
@@ -15,6 +37,12 @@ def login():
 @app.route("/register")
 def register():
     return render_template("register.html")
+
+@app.route("/regions")
+def regions_list():
+    regions = db.session.execute(db.select(Region)).scalars().all()
+    regions = [{"name": region.name, "description": region.description} for region in regions]
+    return jsonify(regions)
 
 @app.route("/hola-mundo")
 def hola_mundo():
