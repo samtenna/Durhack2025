@@ -1096,6 +1096,10 @@ video {
   top: 25rem;
 }
 
+.left-10 {
+  left: 2.5rem;
+}
+
 .z-0 {
   z-index: 0;
 }

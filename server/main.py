@@ -28,7 +28,7 @@ def hola_mundo():
 pins = {
     1 : {
         "City": "London",
-        "Desc": "Beautiful City"
+        "Desc": "Home of tartan, haggis and the Loch Ness Monster, Scotland has a rich history not only in the cobbled streets of Edinburgh but also in the gorgeous country, where in the winter you may catch a glimpse of the northern lights."
     },
 
     2 : {
@@ -73,7 +73,7 @@ pins = {
         "Desc": "Beautiful City"
     },
     12: {
-        "City": "ni",
+        "City": "",
         "Desc": "Beautiful City"
     }
 
@@ -97,7 +97,7 @@ def find_pin(pin_id):
         response = f""" 
             <div class="bg-white">
                 <p class="text-xl text-black">{pins[pin_id]["City"]}</p>
-                <p class="text-xl text-black">{pins[pin_id]["Desc"]}</p>
+                <p class="text-sm text-black">{pins[pin_id]["Desc"]}</p>
             </div>
 
         """
