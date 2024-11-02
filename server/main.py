@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_htmx import HTMX
+from flask_htmx import HTMX, make_response
 
 app = Flask(__name__)
 htmx = HTMX(app)
@@ -8,7 +8,9 @@ htmx = HTMX(app)
 def index():
     return render_template("index.html")
 
-from flask_htmx import make_response
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 @app.route("/hola-mundo")
 def hola_mundo():
