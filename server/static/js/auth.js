@@ -21,12 +21,15 @@ function login(email, password) {
 }
 
 function getUser() {
+    let user = null;
+
     webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
         if (authResult) {
             webAuth.client.userInfo(authResult.accessToken, (err, user) => {
                 if (user) {
                     // store in local storage
                     localStorage.setItem('user', JSON.stringify(user));
+                    return user;
                 }
             });
         } else {
@@ -34,7 +37,7 @@ function getUser() {
             const user = localStorage.getItem('user');
 
             if (user) {
-                return JSON.parse(user);
+                user = JSON.parse(user);
             }
 
             window.location = "/login";
@@ -51,7 +54,9 @@ function register(email, password) {
         connection: 'Username-Password-Authentication',
         email,
         password,
-    }, (e) => {
+        responseType: 'token id_token',
+        redirect_uri: 'http://localhost:5000/',
+    }, (e,) => {
         if (e) {
             console.error(e);
         } else {

@@ -23,7 +23,7 @@
     </ul>
 </nav>
 
-<body onload="getUser()">
+<body onload="loaded()">
     <div>
         <div class="flex justify-evenly">
             <div class="w-full" id="shit"></div>
@@ -84,6 +84,13 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function loaded() {
+            const user = getUser();
+            console.log(user);
+        }
+    </script>
 </body>
 
 <footer class="w-full p-5 flex items-center justify-between bg-white">
