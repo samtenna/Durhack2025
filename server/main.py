@@ -53,61 +53,6 @@ def hola_mundo():
         trigger={"event1": "A message", "event2": "Another message"},
     )
 
-pins = {
-    1 : {
-        "City": "London",
-        "Desc": "Beautiful City"
-    },
-
-    2 : {
-        "City": "Yorkshire",
-        "Desc": "Beautiful City"
-    },
-
-    3: {
-        "City": "Scotland",
-        "Desc": "Beautiful City"
-    },
-    4: {
-        "City": "Wales",
-        "Desc": "Beautiful City"
-    },
-    5: {
-        "City": "Sw",
-        "Desc": "Beautiful City"
-    },
-    6: {
-        "City": "Se",
-        "Desc": "Beautiful City"
-    },
-    7: {
-        "City": "East-Anglia",
-        "Desc": "Beautiful City"
-    },
-    8: {
-        "City": "West-midlands",
-        "Desc": "Beautiful City"
-    },
-    9: {
-        "City": "East-midlands",
-        "Desc": "Beautiful City"
-    },
-    10: {
-        "City": "Nw",
-        "Desc": "Beautiful City"
-    },
-    11: {
-        "City": "Ne",
-        "Desc": "Beautiful City"
-    },
-    12: {
-        "City": "ni",
-        "Desc": "Beautiful City"
-    }
-
-}
-
-
 # TODO change this line of code
 current = []
 
