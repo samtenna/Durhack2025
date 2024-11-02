@@ -336,13 +336,12 @@
             var searchURL = new atlas.service.SearchURL(pipeline);
 
             var query = document.getElementById("search-input").value;
-            searchURL.searchPOI(atlas.service.Aborter.timeout(10000), query, {
+            searchURL.searchFuzzy(atlas.service.Aborter.timeout(10000), query, {
                 lon: map.getCamera().center[0],
                 lat: map.getCamera().center[1],
                 maxFuzzyLevel: 4,
                 view: 'Auto'
             }).then((results) => {
-
                 //Extract GeoJSON feature collection from the response and add it to the datasource
                 var data = results.geojson.getFeatures();
                 datasource.add(data);
