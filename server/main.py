@@ -24,7 +24,7 @@ def hola_mundo():
 pins = {
     1 : {
         "City": "London",
-        "Desc": "It's a shithole"
+        "Desc": "Beautiful City"
     }
 }
 

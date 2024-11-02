@@ -868,6 +868,94 @@ video {
   right: 4rem;
 }
 
+.bottom-32 {
+  bottom: 8rem;
+}
+
+.bottom-48 {
+  bottom: 12rem;
+}
+
+.left-32 {
+  left: 8rem;
+}
+
+.left-20 {
+  left: 5rem;
+}
+
+.left-48 {
+  left: 12rem;
+}
+
+.left-64 {
+  left: 16rem;
+}
+
+.left-72 {
+  left: 18rem;
+}
+
+.left-\[17rem\] {
+  left: 17rem;
+}
+
+.left-\[20rem\] {
+  left: 20rem;
+}
+
+.right-\[5rem\] {
+  right: 5rem;
+}
+
+.right-\[5\.5rem\] {
+  right: 5.5rem;
+}
+
+.right-\[6rem\] {
+  right: 6rem;
+}
+
+.right-\[2rem\] {
+  right: 2rem;
+}
+
+.left-\[18rem\] {
+  left: 18rem;
+}
+
+.right-\[7rem\] {
+  right: 7rem;
+}
+
+.right-\[6\.5rem\] {
+  right: 6.5rem;
+}
+
+.right-\[8rem\] {
+  right: 8rem;
+}
+
+.right-\[12rem\] {
+  right: 12rem;
+}
+
+.bottom-\[22rem\] {
+  bottom: 22rem;
+}
+
+.left-\[10rem\] {
+  left: 10rem;
+}
+
+.bottom-\[23rem\] {
+  bottom: 23rem;
+}
+
+.left-\[9rem\] {
+  left: 9rem;
+}
+
 .block {
   display: block;
 }
