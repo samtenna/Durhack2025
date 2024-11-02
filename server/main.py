@@ -21,4 +21,32 @@ def hola_mundo():
         trigger={"event1": "A message", "event2": "Another message"},
     )
 
+pins = {
+    1 : {
+        "City": "London",
+        "Desc": "It's a shithole"
+    }
+}
+
+
+@app.route("/pins", methods=['GET'])
+def find_pin():
+    pin = pins[1]
+
+    response = f""" 
+        <div class="bg-white">
+            <p class="text-xl text-black">{pins[1]["City"]}</p>
+            <p class="text-xl text-black">{pins[1]["Desc"]}</p>
+        </div>
+
+    """
+    return make_response(
+        response,
+        push_url=False,
+        trigger={"event1": "A message", "event2": "Another message"},
+    )
+
+
+
+
 app.run(debug=True)
