@@ -80,20 +80,31 @@ pins = {
 }
 
 
+# TODO change this line of code
+current = []
+
 @app.route("/pins/<int:pin_id>", methods=['GET'])
 def find_pin(pin_id):
+    global current
 
-    response = f""" 
-        <div class="bg-white">
-            <p class="text-xl text-black">{pins[pin_id]["City"]}</p>
-            <p class="text-xl text-black">{pins[pin_id]["Desc"]}</p>
-        </div>
+    if pin_id in current:
+        current.remove(pin_id)
+        return make_response(
+            ""
+        )
+    else:
+        current.append(pin_id)
+        response = f""" 
+            <div class="bg-white">
+                <p class="text-xl text-black">{pins[pin_id]["City"]}</p>
+                <p class="text-xl text-black">{pins[pin_id]["Desc"]}</p>
+            </div>
 
-    """
-    return make_response(
-        response,
-        push_url=False,
-        trigger={"event1": "A message", "event2": "Another message"},
+        """
+        return make_response(
+            response,
+            push_url=False,
+            trigger={"event1": "A message", "event2": "Another message"},
     )
 
 
