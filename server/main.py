@@ -25,18 +25,36 @@ pins = {
     1 : {
         "City": "London",
         "Desc": "Beautiful City"
+    },
+
+    2 : {
+        "City": "Yorkshire",
+        "Desc": "Beautiful City"
+    },
+
+    3: {
+        "City": "Scotland",
+        "Desc": "Beautiful City"
+    },
+    4: {
+        "City": "Wales",
+        "Desc": "Beautiful City"
+    },
+    5: {
+        "City": "Sw",
+        "Desc": "Beautiful City"
     }
+
 }
 
 
-@app.route("/pins", methods=['GET'])
-def find_pin():
-    pin = pins[1]
+@app.route("/pins/<int:pin_id>", methods=['GET'])
+def find_pin(pin_id):
 
     response = f""" 
         <div class="bg-white">
-            <p class="text-xl text-black">{pins[1]["City"]}</p>
-            <p class="text-xl text-black">{pins[1]["Desc"]}</p>
+            <p class="text-xl text-black">{pins[pin_id]["City"]}</p>
+            <p class="text-xl text-black">{pins[pin_id]["Desc"]}</p>
         </div>
 
     """

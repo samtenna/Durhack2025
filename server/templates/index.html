@@ -23,22 +23,26 @@
         <div class="flex justify-evenly">
             <div class="w-full" id="shit"></div>
             <div class="flex flex-col items-center justify-center w-full relative">
-                <button id="scotland" class="absolute top-[24rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="wales" class="absolute bottom-48 left-[17rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="sw" class="absolute bottom-36 left-[20rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="se" class="absolute bottom-36 right-[6rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="east-anglia" class="absolute bottom-48 right-[2rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="west-midlands" class="absolute bottom-52 left-[20rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="east-midlands" class="absolute bottom-56 right-[6.5rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="yorkshire" class="absolute bottom-80 right-[6.5rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="nw" class="absolute bottom-[22rem] right-[12rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button hx-get="/pins" hx-swap="beforeend" hx-target="#london-textbox" id="london" class="absolute bottom-36 right-[4rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="ne" class="absolute bottom-[25rem] right-[9rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <button id="ni" class="absolute bottom-[23rem] left-[9rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
-                <img src="{{url_for('static',filename='Image/united-kingdom.svg')}}" alt="UK map">
+                <button hx-get="/pins/1" hx-swap="beforeend" hx-target="#london-textbox" id="london" class="z-10 absolute bottom-36 right-[4rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button hx-get="/pins/2" hx-swap="beforeend" hx-target="#yorkshire-textbox" id="yorkshire" class="z-10 absolute bottom-80 right-[6.5rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button hx-get="/pins/3" hx-swap="beforeend" hx-target="#scotland-textbox"id="scotland" class="z-10 absolute top-[24rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button hx-get="/pins/4" hx-swap="beforeend" hx-target="#wales-textbox" id="wales" class="z-10 absolute bottom-48 left-[17rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button hx-get="/pins/5" hx-swap="beforeend" hx-target="#sw-textbox" id="sw" class="z-10 absolute bottom-36 left-[20rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button hx-get="/pins/6" hx-swap="beforeend" hx-target="#se-textbox" id="se" class="z-10 absolute bottom-36 right-[6rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button id="east-anglia" class="z-10 absolute bottom-48 right-[2rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button id="west-midlands" class="z-10 absolute bottom-52 left-[20rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button id="east-midlands" class="z-10 absolute bottom-56 right-[6.5rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button id="nw" class="z-10 absolute bottom-[22rem] right-[12rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button id="ne" class="z-10 absolute bottom-[25rem] right-[9rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <button id="ni" class="z-10 absolute bottom-[23rem] left-[9rem]"><img src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
+                <img class="z-0" src="{{url_for('static',filename='Image/united-kingdom.svg')}}" alt="UK map">
+                <div id="scotland-textbox" class="absolute bg-white top-[20rem] left-[16rem] z-10"></div>
+                <div id="wales-textbox" class="absolute bg-white bottom-[13rem] left-[4rem] z-10"></div>
+                <div id="sw-textbox" class="absolute bg-white bottom-[5rem] left-[8rem] z-10"></div>
             </div>
             <div class="flex relative w-full h-full">
-                <div id="london-textbox" class="absolute bg-white left-9 top-[40rem]"></div>
+                <div id="london-textbox" class="absolute bg-white top-[40rem]"></div>
+                <div id="yorkshire-textbox" class="absolute bg-white top-[30rem]"></div>
             </div>
         </div>
     </div>
