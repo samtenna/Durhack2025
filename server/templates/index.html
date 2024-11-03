@@ -30,6 +30,8 @@
                 class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
         <li><a href="http://localhost:5000/about"
                 class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
+        <li><a href="http://localhost:5000/profile" id="profile-link"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Profile</a></li>
         <li>
             <a href="#" id="logout"
                 class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Logout</a>
@@ -124,13 +126,16 @@
 
                 const loginButton = document.querySelector('#login');
                 const logoutButton = document.querySelector('#logout');
+                const profileButton = document.querySelector('#profile-link');
 
                 if (user) {
                     loginButton.style.display = 'none';
                     logoutButton.style.display = 'block';
+                    profileButton.style.display = 'block';
                 } else {
                     loginButton.style.display = 'block';
                     logoutButton.style.display = 'none';
+                    profileButton.style.display = 'none';
                 }
 
                 loginButton.addEventListener('click', () => {
