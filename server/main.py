@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from flask_htmx import HTMX, make_response
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
+import requests
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
@@ -59,6 +60,9 @@ current = []
 @app.route("/pins/<int:pin_id>", methods=['GET'])
 def find_pin(pin_id):
     global current
+    
+    regions_response = requests.get("http://localhost:5000/regions")
+    regions = regions_response.json()
 
     if pin_id in current:
         current.remove(pin_id)
@@ -69,8 +73,8 @@ def find_pin(pin_id):
         current.append(pin_id)
         response = f""" 
             <div class="bg-white">
-                <p class="text-xl text-black">{pins[pin_id]["City"]}</p>
-                <p class="text-sm text-black">{pins[pin_id]["Desc"]}</p>
+                <p class="text-xl text-black">{regions[pin_id]["name"]}</p>
+                <p class="text-sm text-black">{regions[pin_id]["description"]}</p>
             </div>
 
         """
