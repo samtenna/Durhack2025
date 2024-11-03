@@ -77,7 +77,7 @@ def find_pin(pin_id):
         response = f""" 
             <div class="bg-white">
                 <p class="text-xl text-black">{pins[pin_id]["City"]}</p>
-                <p class="text-xl text-black">{pins[pin_id]["Desc"]}</p>
+                <p class="text-sm text-black">{pins[pin_id]["Desc"]}</p>
             </div>
 
         """
