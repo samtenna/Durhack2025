@@ -67,13 +67,15 @@ def hola_mundo():
 
 # TODO change this line of code
 current = []
+regions = []
 
 @app.route("/pins/<int:pin_id>", methods=['GET'])
 def find_pin(pin_id):
     global current
     
-    regions_response = requests.get("http://localhost:5000/regions")
-    regions = regions_response.json()
+    if not regions:
+        regions_response = requests.get("http://localhost:5000/regions")
+        regions.append(regions_response.json())
 
     if pin_id in current:
         current.remove(pin_id)
@@ -84,8 +86,8 @@ def find_pin(pin_id):
         current.append(pin_id)
         response = f""" 
             <div style="background-color: white; width: 60ch; z-index: 10 ">
-                <p style="font-weight: bold;">{regions[pin_id]["name"]}</p>
-                <p>{regions[pin_id]["description"]}</p>
+                <p style="font-weight: bold;">{regions[0][pin_id]["name"]}</p>
+                <p>{regions[0][pin_id]["description"]}</p>
             </div>
 
         """
