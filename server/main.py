@@ -27,8 +27,11 @@ class Region(db.Model):
 with app.app_context():
     db.create_all()
 
+regions = []
 @app.route("/")
 def index():
+    regions_response = requests.get("http://localhost:5000/regions")
+    regions.append(regions_response.json())
     return render_template("index.html")
 
 @app.route("/about")
@@ -64,7 +67,6 @@ def hola_mundo():
 
 # TODO change this line of code
 current = []
-regions = []
 
 @app.route("/pins/<int:pin_id>", methods=['GET'])
 def find_pin(pin_id):
