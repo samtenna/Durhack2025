@@ -44,6 +44,13 @@ def regions_list():
     regions = [{"name": region.name, "description": region.description} for region in regions]
     return jsonify(regions)
 
+@app.route("/profile/<string:url>")
+def profile(url):
+    return make_response(
+        f'<span><img src="{url}" /></span>',
+        push_url=False,
+    )
+
 @app.route("/hola-mundo")
 def hola_mundo():
     body = "Hola Mundo!"

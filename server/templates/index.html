@@ -18,8 +18,12 @@
     <ul class="flex gap-8 text-xl">
         <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
         <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
-        <li><a href="#"
-                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Register/Login</a></li>
+        <li>
+            <a href="#" id="logout"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Logout</a>
+            <a href="#" id="login"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Register/Login</a>
+        </li>
     </ul>
 </nav>
 
@@ -88,7 +92,23 @@
     <script>
         function loaded() {
             const user = getUser();
-            console.log(user);
+            const loginButton = document.querySelector('#login');
+            const logoutButton = document.querySelector('#logout');
+
+            if (user) {
+                loginButton.style.display = 'none';
+                logoutButton.style.display = 'block';
+            } else {
+                loginButton.style.display = 'block';
+                logoutButton.style.display = 'none';
+            }
+
+            loginButton.addEventListener('click', () => {
+                login();
+            });
+            logoutButton.addEventListener('click', () => {
+                logout();
+            });
         }
     </script>
 </body>
