@@ -21,7 +21,7 @@ function login(email, password) {
 }
 
 function getUser() {
-    let user = null;
+    let u = null;
 
     webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
         if (authResult) {
@@ -29,7 +29,7 @@ function getUser() {
                 if (user) {
                     // store in local storage
                     localStorage.setItem('user', JSON.stringify(user));
-                    return user;
+                    u = user;
                 }
             });
         } else {
@@ -37,16 +37,22 @@ function getUser() {
             const user = localStorage.getItem('user');
 
             if (user) {
-                user = JSON.parse(user);
+                u = JSON.parse(user);
+            } else {
+                window.location = "/login";
             }
-
-            window.location = "/login";
         }
     });
+
+    return u;
 }
 
 function logout() {
     webAuth.logout();
+
+    // remove from local storage
+    localStorage.removeItem('user');
+    window.location = "/login";
 }
 
 function register(email, password) {
