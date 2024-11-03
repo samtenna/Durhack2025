@@ -9,7 +9,7 @@ function login(email, password) {
         email,
         password,
         responseType: 'token id_token',
-        redirect_uri: 'http://localhost:5000/',
+        redirect_uri: 'https://durhack2025-production.up.railway.app/',
     }, (e, r) => {
         if (e) {
             console.error(e);
@@ -64,7 +64,7 @@ function register(email, password) {
         email,
         password,
         responseType: 'token id_token',
-        redirect_uri: 'http://localhost:5000/',
+        redirect_uri: 'https://durhack2025-production.up.railway.app',
     }, (e,) => {
         if (e) {
             console.error(e);
