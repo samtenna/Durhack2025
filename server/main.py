@@ -85,7 +85,7 @@ def find_pin(pin_id):
     else:
         current.append(pin_id)
         response = f""" 
-            <div style="background-color: white; width: 60ch; z-index: 10 ">
+            <div style="background-color: white; width: 60ch; z-index: 10; padding: 5px 5px 5px 5px; ">
                 <p style="font-weight: bold;">{regions[0][pin_id]["name"]}</p>
                 <p>{regions[0][pin_id]["description"]}</p>
             </div>
