@@ -1108,6 +1108,14 @@ video {
   top: 1rem;
 }
 
+.top-\[18rem\] {
+  top: 18rem;
+}
+
+.left-28 {
+  left: 7rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1212,6 +1220,14 @@ video {
   width: 2.5rem;
 }
 
+.w-\[70ch\] {
+  width: 70ch;
+}
+
+.w-\[65ch\] {
+  width: 65ch;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -1298,6 +1314,11 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .text-4xl {
