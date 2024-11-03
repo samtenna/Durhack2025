@@ -10,19 +10,18 @@ function login(email, password) {
         password,
         responseType: 'token id_token',
         redirect_uri: 'http://localhost:5000/',
-    }, (e) => {
+    }, (e, r) => {
         if (e) {
             console.error(e);
-        } else {
-            // redirect
-            window.location = "/";
         }
+        // else {
+        //     // redirect
+        //     window.location = "/";
+        // }
     });
 }
 
-function getUser() {
-    let u = null;
-
+function getUser(cb) {
     webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
         if (authResult) {
             webAuth.client.userInfo(authResult.accessToken, (err, user) => {
@@ -30,7 +29,11 @@ function getUser() {
                     // store in local storage
                     localStorage.setItem('user', JSON.stringify(user));
                     u = user;
+                    cb(u);
+                    return;
                 }
+
+                cb(null);
             });
         } else {
             // check local storage
@@ -38,13 +41,13 @@ function getUser() {
 
             if (user) {
                 u = JSON.parse(user);
-            } else {
-                window.location = "/login";
+                cb(u);
+                return;
             }
+
+            cb(null);
         }
     });
-
-    return u;
 }
 
 function logout() {

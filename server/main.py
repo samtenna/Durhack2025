@@ -43,18 +43,15 @@ def login():
 def register():
     return render_template("register.html")
 
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
 @app.route("/regions")
 def regions_list():
     regions = db.session.execute(db.select(Region)).scalars().all()
     regions = [{"name": region.name, "description": region.description} for region in regions]
     return jsonify(regions)
-
-@app.route("/profile/<string:url>")
-def profile(url):
-    return make_response(
-        f'<span><img src="{url}" /></span>',
-        push_url=False,
-    )
 
 @app.route("/hola-mundo")
 def hola_mundo():

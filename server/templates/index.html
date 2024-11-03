@@ -13,6 +13,7 @@
             opacity: 1;
             transition: opacity 0.5s;
         }
+
         .fade-in.htmx-added {
             opacity: 0;
         }
@@ -25,8 +26,10 @@
 <nav class="flex items-center justify-between p-10 bg-black w-full text-gray-400 border-b-2 border-b-gray-600">
     <h1 class="text-4xl font-bold opacity-50 hover:opacity-100"><a href="">THE BEST</a></h1>
     <ul class="flex gap-8 text-xl">
-        <li><a href="http://localhost:5000/" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
-        <li><a href="http://localhost:5000/about" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
+        <li><a href="http://localhost:5000/"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
+        <li><a href="http://localhost:5000/about"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
         <li>
             <a href="#" id="logout"
                 class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Logout</a>
@@ -45,8 +48,8 @@
                 <div id="wales-textbox" class="textbox absolute bg-white top-[37rem] -right-[15rem] z-10"></div>
             </div>
             <div class="flex flex-col items-center justify-center w-full relative">
-                <button hx-on:click="Toggle(this.id)" hx-get="/pins/11" hx-swap="beforeend swap:0.5s" hx-target="#london-textbox"
-                    id="london" class="z-10 absolute bottom-36 right-[4rem]"><img
+                <button hx-on:click="Toggle(this.id)" hx-get="/pins/11" hx-swap="beforeend swap:0.5s"
+                    hx-target="#london-textbox" id="london" class="z-10 absolute bottom-36 right-[4rem]"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/4" hx-swap="beforeend"
                     hx-target="#yorkshire-textbox" id="yorkshire" class="z-10 absolute bottom-80 right-[6.5rem]"><img
@@ -84,10 +87,12 @@
                     id="ni" class="z-10 absolute bottom-[23rem] left-[9rem]"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <img class="z-0" src="{{url_for('static',filename='Image/united-kingdom.svg')}}" alt="UK map">
-                <div id="scotland-textbox" class="textbox absolute bg-white top-[18rem] left-[18rem] w-[65ch] z-10"></div>
+                <div id="scotland-textbox" class="textbox absolute bg-white top-[18rem] left-[18rem] w-[65ch] z-10">
+                </div>
                 <div id="sw-textbox" class="textbox absolute bg-white bottom-0 -left-[12.5rem] z-10"></div>
                 <div id="se-textbox" class="textbox absolute bg-white bottom-[1rem] left-[10rem] z-10"></div>
-                <div id="west-midlands-textbox" class="textbox absolute bg-white bottom-[12rem] -left-[14rem] z-10"></div>
+                <div id="west-midlands-textbox" class="textbox absolute bg-white bottom-[12rem] -left-[14rem] z-10">
+                </div>
                 <div id="ne-textbox" class="textbox absolute bg-white -right-[26rem] z-10"></div>
                 <div id="nw-textbox" class="textbox absolute bg-white -left-[14rem] z-10"></div>
             </div>
@@ -102,24 +107,30 @@
 
     <script>
         function loaded() {
-            const user = getUser();
-            const loginButton = document.querySelector('#login');
-            const logoutButton = document.querySelector('#logout');
+            getUser((user) => {
+                if (!user) {
+                    window.location.href = '/login';
+                }
 
-            if (user) {
-                loginButton.style.display = 'none';
-                logoutButton.style.display = 'block';
-            } else {
-                loginButton.style.display = 'block';
-                logoutButton.style.display = 'none';
-            }
+                const loginButton = document.querySelector('#login');
+                const logoutButton = document.querySelector('#logout');
 
-            loginButton.addEventListener('click', () => {
-                login();
+                if (user) {
+                    loginButton.style.display = 'none';
+                    logoutButton.style.display = 'block';
+                } else {
+                    loginButton.style.display = 'block';
+                    logoutButton.style.display = 'none';
+                }
+
+                loginButton.addEventListener('click', () => {
+                    login();
+                });
+                logoutButton.addEventListener('click', () => {
+                    logout();
+                });
             });
-            logoutButton.addEventListener('click', () => {
-                logout();
-            });
+
         }
     </script>
 </body>
@@ -129,9 +140,11 @@
         <h1>sdfafasd</h1>
         <ul class="flex flex-col gap-2 text-xl">
             <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
-            <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
+            <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a>
+            </li>
             <li><a href="#"
-                    class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Register/Login</a></li>
+                    class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Register/Login</a>
+            </li>
         </ul>
     </div>
 </footer>

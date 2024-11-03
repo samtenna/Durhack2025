@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="bg-black" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+
+    <script src="https://cdn.auth0.com/js/auth0/9.18/auth0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+
+    <title>UKKKKKK</title>
+</head>
+
+<nav
+    class="flex items-center justify-between p-10 bg-black w-full text-gray-400 opacity-50 hover:opacity-100 border-b-2 border-b-gray-600">
+    <h1 class="text-4xl font-bold opacity-50 hover:opacity-100"><a href="#">THE BEST</a></h1>
+    <ul class="flex gap-8 text-xl">
+        <li><a href="http://localhost:5000/"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
+        <li><a href="http://localhost:5000/about"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
+        <li>
+            <a href="#" id="logout"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Logout</a>
+            <a href="#" id="login"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Register/Login</a>
+        </li>
+    </ul>
+</nav>
+
+<body onload="loaded()">
+
+
+    <script>
+        function loaded() {
+            getUser((user) => {
+                if (!user) {
+                    window.location.href = '/login';
+                }
+
+                const loginButton = document.querySelector('#login');
+                const logoutButton = document.querySelector('#logout');
+
+                if (user) {
+                    loginButton.style.display = 'none';
+                    logoutButton.style.display = 'block';
+                } else {
+                    loginButton.style.display = 'block';
+                    logoutButton.style.display = 'none';
+                }
+
+                loginButton.addEventListener('click', () => {
+                    login();
+                });
+                logoutButton.addEventListener('click', () => {
+                    logout();
+                });
+            });
+        }
+    </script>
+</body>
+
+<footer class="w-full p-5 flex items-center justify-between bg-white">
+    <h1>sdfafasd</h1>
+    <ul class="flex flex-col gap-2 text-xl">
+        <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
+        <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
+        <li><a href="#"
+                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Register/Login</a></li>
+    </ul>
+</footer>
+<script src="https://unpkg.com/htmx.org@2.0.3"
+    integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
+    crossorigin="anonymous"></script>
+<script src="{{url_for('static',filename='js/toggle.js')}}"></script>
+
+</html>
