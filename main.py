@@ -30,7 +30,7 @@ with app.app_context():
 regions = []
 @app.route("/")
 def index():
-    regions_response = requests.get("http://localhost:5000/regions")
+    regions_response = requests.get("http://localhost:80/regions")
     regions.append(regions_response.json())
     return render_template("index.html")
 
@@ -96,7 +96,6 @@ def find_pin(pin_id):
             trigger={"event1": "A message", "event2": "Another message"},
     )
 
-
-
-
-app.run(debug=True)
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=80)
