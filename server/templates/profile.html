@@ -13,7 +13,7 @@
 </head>
 
 <nav
-    class="flex items-center justify-between p-10 bg-black w-full text-gray-400 opacity-50 hover:opacity-100 border-b-2 border-b-gray-600">
+    class="flex items-center justify-between p-10 bg-black w-full text-gray-400 border-b-2 border-b-gray-600">
     <h1 class="text-4xl font-bold opacity-50 hover:opacity-100"><a href="#">THE BEST</a></h1>
     <ul class="flex gap-8 text-xl">
         <li><a href="http://localhost:5000/"
@@ -32,13 +32,17 @@
 </nav>
 
 <body onload="loaded()">
-    <h1 class="text-4xl font-bold justify-self-center " style="color:white">Profile</h1>
-    <div class="flex flex-row">
-        <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Avatar"
-            class="rounded-full h-24 w-24 m-5" id="profile">
-        <div class="flex flex-col">
-            <h4 class="text-white m-5" id="name">Loading...</h4>
-            <h4 class="text-white m-5" id="email">Loading...</h4>
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="flex items-center justify-center border-2 border-slate-600 p-10 flex-col gap-y-8">
+            <h1 class=" text-4xl font-bold justify-self-center " style="color:white">Profile</h1>
+            <div class="flex flex-row gap-x-10">
+                <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Avatar"
+                    class="rounded-full h-24 w-24 m-5" id="profile">
+                <div class="flex flex-col">
+                    <h4 class="text-white m-5" id="name">Loading...</h4>
+                    <h4 class="text-white m-5" id="email">Loading...</h4>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -71,24 +75,29 @@
                 });
 
                 const email = document.querySelector('#email');
-                email.innerText = user.email;
+                email.innerText =  `Email: ${user.email}`;
                 const profile = document.querySelector('#profile');
                 profile.src = user.picture;
                 const name = document.querySelector('#name');
-                name.innerText = user.nickname;
+                name.innerText = `Name: ${user.nickname}`;
             });
         }
     </script>
 </body>
 
-<footer class="w-full p-5 flex items-center justify-between bg-white">
-    <h1>sdfafasd</h1>
-    <ul class="flex flex-col gap-2 text-xl">
-        <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Home</a></li>
-        <li><a href="#" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">About</a></li>
-        <li><a href="#"
-                class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Register/Login</a></li>
-    </ul>
+<footer class="sticky bottom-0 text-white mx-20 bg-black border-t-2 border-t-gray-600"></footer>
+    <div class="text-white bg-black px-20 py-10 flex items-center justify-evenly">
+        <h1 class="text-4xl font-bold">THE BEST</h1>
+        <ul class="flex flex-col gap-2 text-xl">
+            <li><a href="https://www.linkedin.com/in/harvey-balcombe-b1b425268/" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Harvey's LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/harvey-balcombe-b1b425268/" class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">Mr. Balcombe's LinkedIn </a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/harvey-balcombe-b1b425268/"
+                    class="hover:text-white hover:bg-gray-700 px-3 rounded-xl transition delay-75">H.B. on LinkedIn</a>
+            </li>
+
+        </ul>
+    </div>
 </footer>
 <script src="https://unpkg.com/htmx.org@2.0.3"
     integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
