@@ -24,14 +24,6 @@ const Toggle = (id) => {
             audio.currentTime = 0;
         }, 9000);
     }
-    if (id === "london" && !(content.innerHTML)) {
-        var audio = new Audio('https://archive.org/details/MrBrightside');
-        audio.play();
-        setTimeout(function() {
-            audio.pause();
-            audio.currentTime = 0;
-        }, 9000);
-    }
     if (content.innerHTML) {
         content.innerHTML = "";
     }    

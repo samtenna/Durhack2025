@@ -8,6 +8,15 @@
 
     <script src="https://cdn.auth0.com/js/auth0/9.18/auth0.min.js"></script>
     <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <style>
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        .fade-in.htmx-added {
+            opacity: 0;
+        }
+    </style>
 
     <title>UKKKKKK</title>
 </head>
@@ -36,7 +45,7 @@
                 <div id="wales-textbox" class="textbox absolute bg-white top-[37rem] -right-[15rem] z-10"></div>
             </div>
             <div class="flex flex-col items-center justify-center w-full relative">
-                <button hx-on:click="Toggle(this.id)" hx-get="/pins/11" hx-swap="beforeend" hx-target="#london-textbox"
+                <button hx-on:click="Toggle(this.id)" hx-get="/pins/11" hx-swap="beforeend swap:0.5s" hx-target="#london-textbox"
                     id="london" class="z-10 absolute bottom-36 right-[4rem]"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/4" hx-swap="beforeend"
@@ -78,7 +87,7 @@
                 <div id="scotland-textbox" class="textbox absolute bg-white top-[18rem] left-[18rem] w-[65ch] z-10"></div>
                 <div id="sw-textbox" class="textbox absolute bg-white bottom-0 -left-[12.5rem] z-10"></div>
                 <div id="se-textbox" class="textbox absolute bg-white bottom-[1rem] left-[10rem] z-10"></div>
-                <div id="west-midlands-textbox" class="textbox absolute bg-white bottom-[12rem] left-[12rem] z-10"></div>
+                <div id="west-midlands-textbox" class="textbox absolute bg-white bottom-[12rem] -left-[14rem] z-10"></div>
                 <div id="ne-textbox" class="textbox absolute bg-white -right-[26rem] z-10"></div>
                 <div id="nw-textbox" class="textbox absolute bg-white -left-[14rem] z-10"></div>
             </div>
@@ -86,7 +95,7 @@
                 <div id="london-textbox" class="textbox absolute bg-white top-[43rem] -left-[4.3rem] z-10"></div>
                 <div id="yorkshire-textbox" class="textbox absolute bg-white top-[25rem] -left-20"></div>
                 <div id="east-midlands-textbox" class="textbox absolute bg-white top-[33rem] -left-20 z-10"></div>
-                <div id="east-anglia-textbox" class="textbox absolute bg-white top-[43rem] right-13 z-10"></div>
+                <div id="east-anglia-textbox" class="textbox absolute bg-white top-[43rem] right-12 z-10"></div>
             </div>
         </div>
     </div>

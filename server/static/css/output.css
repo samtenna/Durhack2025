@@ -748,6 +748,22 @@ video {
   top: 43rem;
 }
 
+.right-12 {
+  right: 3rem;
+}
+
+.left-\[5rem\] {
+  left: 5rem;
+}
+
+.left-\[1rem\] {
+  left: 1rem;
+}
+
+.-left-\[10rem\] {
+  left: -10rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -952,6 +968,10 @@ video {
 
 .delay-75 {
   transition-delay: 75ms;
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .hover\:bg-gray-700:hover {
