@@ -46,42 +46,42 @@
             </div>
             <div class="flex flex-col items-center justify-center w-full relative">
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/11" hx-swap="beforeend swap:0.5s" hx-target="#london-textbox"
-                    id="london" class="z-10 absolute bottom-36 right-[4rem]"><img
+                    id="london" class="z-10 hover:scale-125 focus:scale-125 transition duration-150 absolute bottom-36 right-[4rem]"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/4" hx-swap="beforeend"
-                    hx-target="#yorkshire-textbox" id="yorkshire" class="z-10 absolute bottom-80 right-[6.5rem]"><img
+                    hx-target="#yorkshire-textbox" id="yorkshire" class="z-10 hover:scale-125 focus:scale-125 transition duration-150 absolute bottom-80 right-[6.5rem]"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/0" hx-swap="beforeend" hx-target="#scotland-textbox"
-                    id="scotland" class="z-10 absolute top-[24rem]"><img
+                    id="scotland" class="z-10 absolute top-[24rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/5" hx-swap="beforeend" hx-target="#wales-textbox"
-                    id="wales" class="z-10 absolute bottom-48 left-[17rem]"><img
+                    id="wales" class="z-10 absolute bottom-48 left-[17rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/9" hx-swap="beforeend" hx-target="#sw-textbox"
-                    id="sw" class="z-10 absolute bottom-36 left-[20rem]"><img
+                    id="sw" class="z-10 absolute bottom-36 left-[20rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/10" hx-swap="beforeend" hx-target="#se-textbox"
-                    id="se" class="z-10 absolute bottom-36 right-[6rem]"><img
+                    id="se" class="z-10 absolute bottom-36 right-[6rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/8" hx-swap="beforeend"
-                    hx-target="#east-anglia-textbox" id="east-anglia" class="z-10 absolute bottom-48 right-[2rem]"><img
+                    hx-target="#east-anglia-textbox" id="east-anglia" class="z-10 absolute bottom-48 right-[2rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/6" hx-swap="beforeend"
                     hx-target="#west-midlands-textbox" id="west-midlands"
-                    class="z-10 absolute bottom-52 left-[20rem]"><img
+                    class="z-10 absolute bottom-52 left-[20rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/7" hx-swap="beforeend"
                     hx-target="#east-midlands-textbox" id="east-midlands"
-                    class="z-10 absolute bottom-56 right-[6.5rem]"><img
+                    class="z-10 absolute bottom-56 right-[6.5rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/2" hx-swap="beforeend" hx-target="#nw-textbox"
-                    id="nw" class="z-10 absolute bottom-[22rem] right-[12rem]"><img
+                    id="nw" class="z-10 absolute bottom-[22rem] right-[12rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/3" hx-swap="beforeend" hx-target="#ne-textbox"
-                    id="ne" class="z-10 absolute bottom-[25rem] right-[9rem]"><img
+                    id="ne" class="z-10 absolute bottom-[25rem] right-[9rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/1" hx-swap="beforeend" hx-target="#ni-textbox"
-                    id="ni" class="z-10 absolute bottom-[23rem] left-[9rem]"><img
+                    id="ni" class="z-10 absolute bottom-[23rem] left-[9rem] hover:scale-125 focus:scale-125 transition duration-150"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <img class="z-0" src="{{url_for('static',filename='Image/united-kingdom.svg')}}" alt="UK map">
                 <div id="scotland-textbox" class="textbox absolute bg-white top-[18rem] left-[18rem] w-[65ch] z-10"></div>
