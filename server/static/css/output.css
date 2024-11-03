@@ -1116,12 +1116,56 @@ video {
   left: 7rem;
 }
 
+.top-\[22rem\] {
+  top: 22rem;
+}
+
+.-right-5 {
+  right: -1.25rem;
+}
+
+.top-\[27rem\] {
+  top: 27rem;
+}
+
+.left-6 {
+  left: 1.5rem;
+}
+
+.-left-16 {
+  left: -4rem;
+}
+
+.-left-28 {
+  left: -7rem;
+}
+
+.-left-48 {
+  left: -12rem;
+}
+
+.-left-\[14rem\] {
+  left: -14rem;
+}
+
+.-right-\[10rem\] {
+  right: -10rem;
+}
+
+.-right-\[28rem\] {
+  right: -28rem;
+}
+
 .z-0 {
   z-index: 0;
 }
 
 .z-10 {
   z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .block {
@@ -1319,6 +1363,11 @@ video {
 .py-32 {
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .text-4xl {
