@@ -32,7 +32,8 @@
     <div>
         <div class="flex justify-evenly py-20">
             <div class="flex relative w-full h-full" id="shit">
-                <div id="ni-textbox" class="absolute bg-white top-[25rem] left-28 z-10"></div>
+                <div id="ni-textbox" class="textbox absolute bg-white top-[25rem] left-28 z-10"></div>
+                <div id="wales-textbox" class="textbox absolute bg-white top-[37rem] -right-[15rem] z-10"></div>
             </div>
             <div class="flex flex-col items-center justify-center w-full relative">
                 <button hx-on:click="Toggle(this.id)" hx-get="/pins/11" hx-swap="beforeend" hx-target="#london-textbox"
@@ -74,19 +75,18 @@
                     id="ni" class="z-10 absolute bottom-[23rem] left-[9rem]"><img
                         src="{{url_for('static',filename='Image/location-pin.png')}}" alt="location pin"></button>
                 <img class="z-0" src="{{url_for('static',filename='Image/united-kingdom.svg')}}" alt="UK map">
-                <div id="scotland-textbox" class="absolute bg-white top-[18rem] left-[18rem] w-[65ch] z-10"></div>
-                <div id="wales-textbox" class="absolute bg-white bottom-[13rem] left-[4rem] z-10"></div>
-                <div id="sw-textbox" class="absolute bg-white bottom-[5rem] -left-[16rem] z-10"></div>
-                <div id="se-textbox" class="absolute bg-white bottom-[1rem] left-[10rem] z-10"></div>
-                <div id="west-midlands-textbox" class="absolute bg-white bottom-[12rem] left-[12rem] z-10"></div>
-                <div id="ne-textbox" class="absolute bg-white -right-[26rem] z-10"></div>
-                <div id="nw-textbox" class="absolute bg-white -left-[14rem] z-10"></div>
+                <div id="scotland-textbox" class="textbox absolute bg-white top-[18rem] left-[18rem] w-[65ch] z-10"></div>
+                <div id="sw-textbox" class="textbox absolute bg-white bottom-0 -left-[12.5rem] z-10"></div>
+                <div id="se-textbox" class="textbox absolute bg-white bottom-[1rem] left-[10rem] z-10"></div>
+                <div id="west-midlands-textbox" class="textbox absolute bg-white bottom-[12rem] left-[12rem] z-10"></div>
+                <div id="ne-textbox" class="textbox absolute bg-white -right-[26rem] z-10"></div>
+                <div id="nw-textbox" class="textbox absolute bg-white -left-[14rem] z-10"></div>
             </div>
             <div class="flex relative w-full h-full">
-                <div id="london-textbox" class="absolute bg-white top-[43rem] -left-[4.5rem] z-10"></div>
-                <div id="yorkshire-textbox" class="absolute bg-white top-[25rem] -left-20"></div>
-                <div id="east-midlands-textbox" class="absolute bg-white top-[33rem] -left-20 z-10"></div>
-                <div id="east-anglia-textbox" class="absolute bg-white top-[43rem] right-13 z-10"></div>
+                <div id="london-textbox" class="textbox absolute bg-white top-[43rem] -left-[4.5rem] z-10"></div>
+                <div id="yorkshire-textbox" class="textbox absolute bg-white top-[25rem] -left-20"></div>
+                <div id="east-midlands-textbox" class="textbox absolute bg-white top-[33rem] -left-20 z-10"></div>
+                <div id="east-anglia-textbox" class="textbox absolute bg-white top-[43rem] right-13 z-10"></div>
             </div>
         </div>
     </div>

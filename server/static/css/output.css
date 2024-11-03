@@ -1228,6 +1228,46 @@ video {
   left: -16rem;
 }
 
+.left-40 {
+  left: 10rem;
+}
+
+.top-\[37rem\] {
+  top: 37rem;
+}
+
+.-right-\[20rem\] {
+  right: -20rem;
+}
+
+.-right-\[40rem\] {
+  right: -40rem;
+}
+
+.-right-\[30rem\] {
+  right: -30rem;
+}
+
+.-right-\[15rem\] {
+  right: -15rem;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.-left-\[12rem\] {
+  left: -12rem;
+}
+
+.-left-\[13rem\] {
+  left: -13rem;
+}
+
+.-left-\[12\.5rem\] {
+  left: -12.5rem;
+}
+
 .z-0 {
   z-index: 0;
 }
